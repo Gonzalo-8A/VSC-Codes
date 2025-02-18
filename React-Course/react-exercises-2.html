@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container" style="display: flex; gap: 10px;"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      // const ClickMe = () => {
+      //   return (
+      //     <button onClick={console.log('Clicked')}>Clicked 0 times</button>
+      //   )
+      // }
+
+      const TypingComponent = ({ inputText, setInputText }) => {
+        const saveInputText = (event) => {
+          setInputText(event.target.value)
+        }
+        
+        return (
+          <div>
+            <input
+            type="text"
+            onChange={saveInputText}
+            value={inputText}
+            />
+            <p>Hello {inputText}</p>
+          </div>
+        )
+      }
+
+      const ResetComponent = ({ inputText, setInputText }) => {
+        const resetInput = () => {
+          setInputText('')
+        }
+        
+        return (
+          <button onClick={resetInput}>Reset</button>
+        )
+      }
+
+      const ExampleComponent = ({ inputText, setInputText }) => {
+        const runExample = () => {
+          setInputText('Example')
+        }
+        
+        return(
+          <button onClick={runExample}>Example</button>
+        )
+      }
+
+      const App = () => {
+        const [inputText, setInputText] = React.useState('');
+        return (
+          <>
+            <TypingComponent
+              inputText={inputText}
+              setInputText={setInputText}
+            />
+            <ResetComponent
+              inputText={inputText}
+              setInputText={setInputText}
+            />
+            <ExampleComponent
+              inputText={inputText}
+              setInputText={setInputText}
+            />
+          </>
+        )
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+
+    </script>
+  </body>
+</html>

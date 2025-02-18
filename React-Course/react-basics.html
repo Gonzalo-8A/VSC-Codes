@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      
+      const name = 'Gonzalo';
+      const productCost = 30;
+      const shippingCost = 5;
+;
+
+      const container = document.querySelector('.js-container');
+      const root = ReactDOM.createRoot(container);
+      setInterval(() => {
+        const clock = <p>Today is {dayjs().format('HH:mm:ss')}</p>
+
+        root.render(clock)
+      },1000)
+
+      // setInterval(() => {
+      //   const paragraph = <p>Current time: {dayjs().format('HH:mm:ss')}</p>;
+      //   root.render(paragraph);
+      // }, 1000);
+    </script>
+  </body>
+</html>
