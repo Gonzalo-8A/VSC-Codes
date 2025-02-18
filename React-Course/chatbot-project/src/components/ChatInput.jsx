@@ -1,16 +1,18 @@
+import dayjs from 'dayjs';
 import {useState} from 'react'
 import { Chatbot } from 'supersimpledev';
+import LoadingImg from '../assets/loading-spinner.gif'
 import './ChatInput.css'
 
 export const ChatInput = ({ chatMessages, setChatMessages }) => {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false)
 
-  const saveInputText = (event) => {
+  function saveInputText  (event) {
     setInputText(event.target.value)
   }
 
-  const sendMessage = async () => {
+  async function sendMessage () {
     
     if(isLoading || inputText==='') {
       return
@@ -24,7 +26,8 @@ export const ChatInput = ({ chatMessages, setChatMessages }) => {
       {
         message: inputText,
         sender: 'user',
-        id: crypto.randomUUID()
+        id: crypto.randomUUID(),
+        time: dayjs().valueOf()
       }
     ];
 
@@ -33,9 +36,9 @@ export const ChatInput = ({ chatMessages, setChatMessages }) => {
     setChatMessages([
       ...newChatMessages,
       {
-        message: 'Thinking...',
+        message: <img src={LoadingImg} className="loading-spinner" />,
         sender: 'robot',
-        id: crypto.randomUUID()
+        id: crypto.randomUUID(),
       }
     ])
     const response = await Chatbot.getResponseAsync(inputText);
@@ -46,14 +49,18 @@ export const ChatInput = ({ chatMessages, setChatMessages }) => {
       {
         message: response,
         sender: 'robot',
-        id: crypto.randomUUID()
+        id: crypto.randomUUID(),
+        time: dayjs().valueOf()
       }
     ]);
     setIsLoading(false)
   }
   
+  function clearMessages() {
+    setChatMessages([])
+  }
 
-  const handleKeyDown = (e) => {
+  function handleKeyDown (e) {
     if(e.key==='Enter'){
       sendMessage()
     }
@@ -79,6 +86,10 @@ export const ChatInput = ({ chatMessages, setChatMessages }) => {
         onClick={sendMessage}
         className='send-button'
         >Send</button>
+        <button
+        onClick={clearMessages}
+        className='clear-button'
+        >Clear</button>
       </div>
     </>
   )

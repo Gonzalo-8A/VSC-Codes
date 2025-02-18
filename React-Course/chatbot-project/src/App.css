@@ -4,5 +4,10 @@
   flex-direction: column;
   margin: 0 auto;
   height: 100vh;
+  padding: 2rem 0;
 }
 
+.welcome-message {
+  color: rgb(120, 120, 120);
+  text-align: center;
+}

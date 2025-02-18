@@ -1,33 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChatInput } from './components/ChatInput';
+import { Chatbot } from 'supersimpledev';
 import ChatMessages from './components/ChatMessages';
 import './App.css'
 
 function App() {
   const [chatMessages, setChatMessages] = useState(
-    [
-  // {
-  //   message: 'hello chatbot',
-  //   sender: 'user',
-  //   id: crypto.randomUUID()
-  // }, {
-  //   message: 'Hello! How can I help you?',
-  //   sender: 'robot',
-  //   id: crypto.randomUUID()
-  // }, {
-  //   message: 'Can you get me todays date?',
-  //   sender: 'user',
-  //   id: crypto.randomUUID()
-  // }, {
-  //   message: 'Sure! Today is September 27',
-  //   sender: 'robot',
-  //   id: crypto.randomUUID()
-  // }
-]
+    JSON.parse(localStorage.getItem('messages') || [])
   );
   
+  useEffect(() => {
+    Chatbot.addResponses({
+      'goodbye': 'Goodbye. Have a nice day!',
+      'give me a unique id': function() {
+        return `Sure. Here's a unique ID: ${crypto.randomUUID()}`
+      }
+    })
+  })
+
+  useEffect(() => {
+    localStorage.setItem('messages', JSON.stringify(chatMessages))
+  })
+
   return (
     <div className="app-container">
+      {chatMessages.length === 0 && (
+        <p className="welcome-message">
+          Welcome to the chatbot project! Send a message using the textbox below.
+        </p>
+      )}
       <ChatMessages 
         chatMessages={chatMessages}
       />
