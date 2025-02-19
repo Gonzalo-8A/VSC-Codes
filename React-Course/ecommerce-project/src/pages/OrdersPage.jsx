@@ -1,8 +1,11 @@
+import './header.css';
 import "./OrdersPage.css"
 
 export function OrdersPage() {
   return (
     <>
+      <title>Orders</title>
+
       <div className="header">
         <div className="left-section">
           <a href="/" className="header-link">
