@@ -30,7 +30,7 @@ async function loadPage() {
   const percentProgress = ((today - orderTime) / (deliveryTime - orderTime)) * 100;
 
   const trackingHTML = `
-  <a class="back-to-orders-link link-primary" href="orders.html">
+  <a class="back-to-orders-link link-primary" href="/orders">
     View all orders
   </a>
   <div class="delivery-date">
