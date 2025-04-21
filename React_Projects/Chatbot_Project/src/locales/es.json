@@ -2,27 +2,52 @@
   "greetings": {
     "hello": "¡Hola! ¿En qué puedo ayudarte?",
     "how_are_you": "¡Estoy genial! ¿En qué puedo ayudarte?",
-    "thanks": "¡De nada! Avísame si necesitas ayuda con algo más."
+    "thanks": "¡De nada! Avísame si necesitas ayuda con algo más.",
+    "goodbye": "¡Hasta luego! Pasa un buen día 😊."
   },
   "coin_throw": {
-    "heads": "¡Claro! Salió cara",
-    "tails": "¡Claro! Salió cruz"
+    "heads": "¡Claro! Salió cara.",
+    "tails": "¡Claro! Salió cruz."
   },
   "dice_throw": {
-    "result": "¿Claro! Salió el número {{number}}"
+    "result": "¿Claro! Salió el número {{number}}."
   },
-
-  "today.date": "Hoy es {{day}} de {{month}}",
-  "Sorry, I couldn’t find that video.": "Lo siento, no pude encontrar ese vídeo.",
-  "Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, get today's date, tell you a joke, solve a math problem or search for a song on YouTube. Let me know how I can help!": "Lo siento, no entiendo eso. Actualmente solo sé lanzar una moneda, tirar un dado, decirte la fecha de hoy, contarte un chiste, resolver una operación matemática o buscar una canción en YouTube. ¡Dime cómo te ayudo!",
-  "Sorry, it looks like your message is empty. Please make sure you send a message and I will give you a response.": "Parece que tu mensaje está vacío. Por favor, escribe algo y te responderé.",
-  "The result is {{result}}": "El resultado es {{result}}",
-  "Sorry, I couldn't calculate that. Please make sure it's a valid math expression.": "Lo siento, no he podido calcular eso. Asegúrate de que sea una expresión matemática válida.",
-  "Playing": "Sonando",
-  "Why don’t scientists trust atoms? Because they make up everything!": "¿Por qué los científicos no confían en los átomos? ¡Porque lo componen todo!",
-  "Why did the scarecrow win an award? Because he was outstanding in his field!": "¿Por qué el espantapájaros ganó un premio? ¡Porque era destacado en su campo!",
-  "What do you call fake spaghetti? An impasta!": "¿Cómo llamas a una pasta falsa? ¡Un impasta!",
-  "Why can’t you hear a pterodactyl go to the bathroom? Because the ‘P’ is silent.": "¿Por qué no puedes oír a un pterodáctilo ir al baño? Porque la ‘P’ es silenciosa.",
-  "Why did the math book look sad? Because it had too many problems.": "¿Por qué el libro de matemáticas parecía triste? Porque tenía demasiados problemas.",
-  "I'm reading a book on anti-gravity. It's impossible to put down!": "Estoy leyendo un libro sobre antigravedad. ¡Es imposible dejarlo!"
+  "today.date": "Hoy es {{day}} de {{month}}.",
+  "months": {
+    "0": "enero",
+    "1": "febrero",
+    "2": "marzo",
+    "3": "abril",
+    "4": "mayo",
+    "5": "junio",
+    "6": "julio",
+    "7": "agosto",
+    "8": "septiembre",
+    "9": "octubre",
+    "10": "noviembre",
+    "11": "diciembre"
+  },
+  "jokes": {
+    "atoms": "¿Por qué los científicos no confían en los átomos? ¡Porque lo componen todo!",
+    "scarecrow": "¿Por qué el espantapájaros ganó un premio? ¡Porque era destacado en su campo!",
+    "spaghetti": "¿Cómo llamas a una pasta falsa? ¡Un impasta!",
+    "pterodactyl": "¿Por qué no puedes oír a un pterodáctilo ir al baño? Porque la ‘P’ es silenciosa.",
+    "math_book": "¿Por qué el libro de matemáticas parecía triste? Porque tenía demasiados problemas.",
+    "anti_gravity": "Estoy leyendo un libro sobre antigravedad. ¡Es imposible dejarlo!"
+  },
+  "misc": {
+    "unique_id": "¡Claro! Aquí tienes tu id: {{id}}."
+  },
+  "math": {
+    "result": "El resultado es {{result}}.",
+    "error": "Lo siento, no he podido calcular eso. Asegúrate de que sea una expresión matemática válida."
+  },
+  "error": {
+    "video_not_found": "Lo siento, no pude encontrar ese vídeo."
+  },
+  "default": {
+    "unknown": "Lo siento, no entiendo eso. Actualmente solo sé lanzar una moneda, tirar un dado, decirte la fecha de hoy, contarte un chiste, resolver una operación matemática o buscar una canción o vídeo en YouTube. ¡Dime cómo te ayudo!",
+    "empty": "Parece que tu mensaje está vacío. Por favor, escribe algo y te responderé."
+  },
+  "Playing": "Sonando"
 }

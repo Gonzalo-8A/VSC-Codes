@@ -8,7 +8,7 @@ export async function searchYouTube(query) {
       body: JSON.stringify({ query }),
     });
     const data = await response.json();
-    return data.videoId;
+    return { videoId: data.videoId, title: data.title };
   } catch (error) {
     console.error("Error searching YouTube:", error);
     return null;

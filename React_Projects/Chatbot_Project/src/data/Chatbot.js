@@ -21,14 +21,22 @@ export const Chatbot = {
     },
     "what is the date today": function () {
       const now = new Date();
-      const months = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December",
-      ];
+      const monthIndex = now.getMonth();
       return {
         translationKey: "today.date",
         variables: {
-          month: months[now.getMonth()],
+          month: `months.${monthIndex}`,
+          day: now.getDate()
+        }
+      };
+    },
+    "date": function () {
+      const now = new Date();
+      const monthIndex = now.getMonth();
+      return {
+        translationKey: "today.date",
+        variables: {
+          month: `months.${monthIndex}`,
           day: now.getDate()
         }
       };
@@ -52,11 +60,12 @@ export const Chatbot = {
       const capitalizedQuery = query.replace(/\b\w/g, (char) => char.toUpperCase());
 
       try {
-        const videoId = await searchYouTube(query);
+        const { videoId, title } = await searchYouTube(query);
         const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        console.log(title)
         const html = `
-          <div style="margin-bottom: 10px">🎵 <strong>${capitalizedQuery}</strong></div>
-          <iframe width="100%" height="315" src="${embedUrl}?autoplay=1" title="YouTube video player" frameborder="0"
+          <div style="margin-bottom: 10px">🎵 <strong>${title || capitalizedQuery}</strong></div>
+          <iframe width="120%" height="315" src="${embedUrl}?autoplay=1" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
           </iframe>
         `;
@@ -67,7 +76,7 @@ export const Chatbot = {
       }
     },
     "thank": () => ({ translationKey: "greetings.thanks" }),
-    "goodbye": () => ({ translationKey: "greetings.goodbye" }),
+    "goodbye bye": () => ({ translationKey: "greetings.goodbye" }),
     "give me a unique id": function () {
       return {
         translationKey: "misc.unique_id",

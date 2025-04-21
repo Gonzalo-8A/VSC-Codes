@@ -53,11 +53,6 @@ export const ChatInput = ({ chatMessages, setChatMessages }) => {
       }
     ]);
     
-
-    console.log('––– chatMessages tras set:', [
-      ...newChatMessages,
-      { message: response, sender: 'robot', id: '…', time: dayjs().valueOf() }
-    ]);
     setIsLoading(false)
   }
   

@@ -19,20 +19,38 @@ app.post("/api/search", async (req, res) => {
   }
 
   try {
-    const response = await fetch(
+    const searchResponse = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
         query
       )}&key=${apiKey}&type=video&maxResults=1`
     );
-    const data = await response.json();
+    const searchData = await searchResponse.json();
 
-    const videoId = data.items?.[0]?.id?.videoId;
-    res.json({ videoId: videoId || null });
+    const videoId = searchData.items?.[0]?.id?.videoId;
+    console.log("🔎 Video ID encontrado:", videoId);
+
+    if (!videoId) {
+      return res.status(404).json({ error: "No video found" });
+    }
+
+    const videoDetailsResponse = await fetch(
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`
+    );
+    
+    const videoDetails = await videoDetailsResponse.json();
+
+    const title = videoDetails.items?.[0]?.snippet?.title;
+
+    res.json({
+      videoId,
+      title: title || null,
+    });
   } catch (error) {
-    console.error("Error fetching video:", error);
+    console.error("❌ Error:", error);
     res.status(500).json({ error: "Failed to fetch video" });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`✅ Server is running on http://localhost:${PORT}`);

@@ -15,9 +15,6 @@ export default function ChatMessages({ chatMessages }) {
 
   const { t } = useTranslation();
 
-  console.log('––– chatMessages props en ChatMessages:', chatMessages);
-
-
   return (
     <div className="chat-messages-container" ref={chatMessagesRef}>
       {chatMessages.map((chatMessage) => {
