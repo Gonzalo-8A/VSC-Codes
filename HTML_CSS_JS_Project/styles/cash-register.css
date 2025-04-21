@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-gray: #dfdfe2;
+  --dark-blue: #0a0a23;
+  --light-blue: #99c9ff;
+}
+
+body {
+  background-color: var(--dark-blue);
+  color: var(--light-gray);
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 1.5rem 0;
+  font-size: 2.5rem;
+  color: var(--light-gray);
+  text-align: center;
+}
+
+#change-due{
+  display: none;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: wheat;
+  color: black;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+}
+
+.enter-cash-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  font-size: 1.5rem;
+}
+
+#cash{
+  height: 30px;
+  width: 150px;
+  font-size: 1.2rem;
+}
+
+#purchase-btn{
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+  color: #0a0a23;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-color: #feac32;
+  border-width: 3px;
+}
+
+#cash-register-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 320px;
+}
+
+.cash-total{
+  background-color: black;
+  color: white;
+  border: 0.5rem solid var(--light-blue);
+  padding: 0.3rem 3rem;
+  margin-right: 3rem;
+}
+
+.cash-neck{
+  height: 2.5rem;
+  width: 2.2rem;
+  background-color: var(--light-blue);
+  margin-right: 8rem;
+}
+
+.cash-body{
+  display: flex;
+  background-color: var(--light-blue);
+  padding: 1.3rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.cash-price-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 35%;
+}
+
+.cash-buttons{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: 5rem;
+  width: 5rem;
+}
+
+.cash-btn{
+  height: 1.3rem;
+  width: 1.3rem;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.enter-price-container{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+  align-items: center;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.enter-price-container label{
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+#price {
+  width: 90%;
+  background-color: #d3e6fb;
+  font-size: 1.5rem;
+}
+
+#enter-price-btn{
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: #6a665f;
+  background-image: linear-gradient(#aea691, #98917f);
+  border-color: #6a665f;
+}
+
+.change{
+  background-color: white;
+  color: black;
+  margin-left: 2rem;
+  padding: 1rem;
+  text-wrap: nowrap;
+  font-size: 1.1rem;
+}
+
+.change-in-drawer-title{
+  white-space: nowrap;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cash-drawer{
+  height: 2rem;
+  width: 106.3%;
+  margin-top: 0.6rem;
+  margin-bottom: 2rem;
+  background-color: var(--light-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-knob{
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+}

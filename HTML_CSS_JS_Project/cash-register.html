@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en, es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="styles/cash-register.css">
+  </head>
+  <body>
+    <main>
+      <h1>Cash Register Project</h1>
+      <div id="change-due"></div>
+      <div class="enter-cash-container">
+        <label for="cash">Enter cash from customer:</label>
+        <input type="number" id="cash" placeholder="0">
+        <button id="purchase-btn">Purchase</button>
+      </div>
+      <div id="cash-register-container">
+        <div class="cash-total">
+          <p id="cash-total">Total: $0</p>
+        </div>
+        <div class="cash-neck"></div>
+        <div class="cash-body">
+          <div class="cash-price-container">
+            <div class="cash-buttons">
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+              <button class="cash-btn"></button>
+            </div>
+            <div class="enter-price-container">
+              <label for="price">Enter price<br> here:</label>
+              <input type="number" id="price">
+              <button id="enter-price-btn">Enter price</button>
+            </div>
+          </div>
+          <div class="change" id="change-in-drawer"></div>
+        </div>
+        <div class="cash-drawer">
+          <div class="drawer-knob"></div>
+        </div>
+      </div>
+    </main>
+    <script src="scripts/cash-register.js"></script>
+  </body>
+</html>

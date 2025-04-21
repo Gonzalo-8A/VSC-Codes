@@ -1,0 +1,261 @@
+/* Estilos generales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../images/pokemon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.pokedex {
+  background: #f2f2f2;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comparing {
+  width: 700px;
+}
+
+.pokedex-header {
+  text-align: center;
+  background: #ef5350;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#compare-btn{
+  padding: 10px;
+  border-radius: 1rem;
+  color: white;
+  background: red;
+  border: 2px solid white;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  max-width: 200px;
+}
+
+.pokemon-input {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pokemon-input input{
+  border-radius: 1rem;
+  border: 2px solid black;
+  width: 100%;
+  max-width: 15rem;
+  font-size: 1.3rem;
+  padding-left: 1rem;
+}
+
+#search-btn, #search-btn-compare {
+  background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
+  border: 2px solid #000000;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#search-btn::before, #search-btn-compare::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #000000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokemons-container{
+  display: flex;
+  gap: 2rem;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Información general del Pokémon */
+.pokemon-info {
+  text-align: left;
+  background-color: #ececec;
+  padding: 0 1rem ;
+  border-radius: 1rem;
+  min-height: 300px;
+}
+
+.pokemon-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.pokemon-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Contenedor general de tipos */
+#types, .pokemon-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: left;
+  margin-top: 20px;
+  margin-bottom: 19.92px;
+}
+
+/* Estilos generales para cada tipo */
+.pokemon-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 40px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+/* Colores específicos para cada tipo de Pokémon */
+.pokemon-type.fire {
+  background-color: #f08030;  /* Fuego */
+}
+
+.pokemon-type.water {
+  background-color: #6890f0;  /* Agua */
+}
+
+.pokemon-type.grass {
+  background-color: #78c850;  /* Planta */
+}
+
+.pokemon-type.electric {
+  background-color: #f8d030;  /* Eléctrico */
+}
+
+.pokemon-type.ice {
+  background-color: #98d8d8;  /* Hielo */
+}
+
+.pokemon-type.fighting {
+  background-color: #c03028;  /* Lucha */
+}
+
+.pokemon-type.poison {
+  background-color: #a040a0;  /* Veneno */
+}
+
+.pokemon-type.ground {
+  background-color: #e0c068;  /* Tierra */
+}
+
+.pokemon-type.flying {
+  background-color: #a890f0;  /* Volador */
+}
+
+.pokemon-type.psychic {
+  background-color: #f85888;  /* Psíquico */
+}
+
+.pokemon-type.bug {
+  background-color: #a8b820;  /* Bicho */
+}
+
+.pokemon-type.rock {
+  background-color: #b8a038;  /* Roca */
+}
+
+.pokemon-type.ghost {
+  background-color: #705898;  /* Fantasma */
+}
+
+.pokemon-type.dragon {
+  background-color: #7038f8;  /* Dragón */
+}
+
+.pokemon-type.dark {
+  background-color: #705848;  /* Siniestro */
+}
+
+.pokemon-type.steel {
+  background-color: #b8b8d0;  /* Acero */
+}
+
+.pokemon-type.fairy {
+  background-color: #f0b6bc;  /* Hada */
+}
+
+.pokemon-type.normal {
+  background-color: #a8a878;  /* Normal (gris claro) */
+}
+
+/* Tabla de estadísticas */
+.pokemon-stats table {
+  width: 100%;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+.pokemon-stats th, .pokemon-stats td {
+  text-align: center;
+  padding: 8px;
+  background-color: #f4c1c0bd;
+  border-radius: 1rem;
+}
+
+.pokemon-stats th {
+  background-color: #ef5350;
+  color: white;
+}
+
+.pokemon-stats td {
+  background-color: #f4c1c0bd;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en, es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Pokédex</title>
+    <link rel="stylesheet" href="styles/pokemon-search-app.css" />
+  </head>
+  <body>
+    
+    <main>
+      <div class="pokedex">
+        <div class="pokedex-header">
+          <h1>Pokédex</h1>
+        </div>
+        <button id="compare-btn">Add a Pokémon</button>
+        <div id="pokemons-container" class="">
+          <div class="pokemon-card" id="pokemon-card-0">
+            <div class="pokemon-input">
+              <label for="pokemon-input"></label>
+              <input id="pokemon-input" type="text">
+              <button id="search-btn"></button>
+            </div>
+            <div class="pokemon-info">
+              <h2 class="pokemon-name"></h2>
+              <p class="pokemon-body-info"></p>
+              <img class="pokemon-image" src="" alt="Pokemon image" style="display:none">
+              <div id="types" class="pokemon-types">
+              </div>
+            </div>
+            <div class="pokemon-stats" style="display:none">
+              <h3>Stats</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Stat</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>HP:</td>
+                    <td class="stat-0" id="hp-0"></td>
+                  </tr>
+                  <tr>
+                    <td>Attack:</td>
+                    <td class="stat-0" id="attack-0"></td>
+                  </tr>
+                  <tr>
+                    <td>Defense:</td>
+                    <td class="stat-0" id="defense-0"></td>
+                  </tr>
+                  <tr>
+                    <td>Sp. Attack:</td>
+                    <td class="stat-0" id="special-attack-0"></td>
+                  </tr>
+                  <tr>
+                    <td>Sp. Defense:</td>
+                    <td class="stat-0" id="special-defense-0"></td>
+                  </tr>
+                  <tr>
+                    <td>Speed:</td>
+                    <td class="stat-0" id="speed-0"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    </main>
+
+    <script src="scripts/pokemon-search-app.js"></script>
+  </body>
+</html>

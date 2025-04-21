@@ -1,0 +1,28 @@
+{
+  "greetings": {
+    "hello": "Hello! How can I help you?",
+    "how_are_you": "I'm doing great! How can I help you?",
+    "thanks": "No problem! Let me know if you need help with anything else!"
+  },
+  "coin_throw": {
+    "heads": "Sure! You got heads",
+    "tails": "Sure! You got tails"
+  },
+  "dice_throw": {
+    "result": "Sure! You got {{number}}"
+  },
+ 
+  "today.date": "Today is {{month}} {{day}}",
+  "Sorry, I couldn’t find that video.": "Sorry, I couldn’t find that video.",
+  "Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, get today's date, tell you a joke, solve a math problem or search for a song on YouTube. Let me know how I can help!": "Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, get today's date, tell you a joke, solve a math problem or search for a song on YouTube. Let me know how I can help!",
+  "Sorry, it looks like your message is empty. Please make sure you send a message and I will give you a response.": "Sorry, it looks like your message is empty. Please make sure you send a message and I will give you a response.",
+  "The result is {{result}}": "The result is {{result}}",
+  "Sorry, I couldn't calculate that. Please make sure it's a valid math expression.": "Sorry, I couldn't calculate that. Please make sure it's a valid math expression.",
+  "Playing": "Playing",
+  "Why don’t scientists trust atoms? Because they make up everything!": "Why don’t scientists trust atoms? Because they make up everything!",
+  "Why did the scarecrow win an award? Because he was outstanding in his field!": "Why did the scarecrow win an award? Because he was outstanding in his field!",
+  "What do you call fake spaghetti? An impasta!": "What do you call fake spaghetti? An impasta!",
+  "Why can’t you hear a pterodactyl go to the bathroom? Because the ‘P’ is silent.": "Why can’t you hear a pterodactyl go to the bathroom? Because the ‘P’ is silent.",
+  "Why did the math book look sad? Because it had too many problems.": "Why did the math book look sad? Because it had too many problems.",
+  "I'm reading a book on anti-gravity. It's impossible to put down!": "I'm reading a book on anti-gravity. It's impossible to put down!"
+}

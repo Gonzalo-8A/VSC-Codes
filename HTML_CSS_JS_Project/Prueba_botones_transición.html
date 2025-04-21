@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Transiciones CSS</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px;
+      justify-content: center;
+    }
+
+    .card {
+      width: 150px;
+      height: 150px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: transform 0.5s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.2);
+    }
+
+    .ease       { transition-timing-function: ease; }
+    .ease-in    { transition-timing-function: ease-in; }
+    .ease-out   { transition-timing-function: ease-out; }
+    .ease-in-out{ transition-timing-function: ease-in-out; }
+    .linear     { transition-timing-function: linear; }
+
+  </style>
+</head>
+<body>
+
+  <div class="card ease">ease</div>
+  <div class="card ease-in">ease-in</div>
+  <div class="card ease-out">ease-out</div>
+  <div class="card ease-in-out">ease-in-out</div>
+  <div class="card linear">linear</div>
+
+</body>
+</html>
