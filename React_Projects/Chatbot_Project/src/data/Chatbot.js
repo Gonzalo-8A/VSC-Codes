@@ -4,7 +4,9 @@ import { searchYouTube } from "../helpers/searchYoutube.js";
 
 export const Chatbot = {
   defaultResponses: {
-    "hello hi": () => ({ translationKey: "greetings.hello" }),
+    "hello": () => ({ translationKey: "greetings.hello" }),
+    "hi": () => ({ translationKey: "greetings.hello" }),
+    "hey": () => ({ translationKey: "greetings.hello" }),
     "how are you": () => ({ translationKey: "greetings.how_are_you" }),
     "flip a coin": function () {
       const isHeads = Math.random() < 0.5;
@@ -65,7 +67,7 @@ export const Chatbot = {
         console.log(title)
         const html = `
           <div style="margin-bottom: 10px">🎵 <strong>${title || capitalizedQuery}</strong></div>
-          <iframe width="120%" height="315" src="${embedUrl}?autoplay=1" title="YouTube video player" frameborder="0"
+          <iframe width="100%" height="315" src="${embedUrl}?autoplay=1" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
           </iframe>
         `;

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
-import RobotProfileImage from "../assets/robot.png";
+import RobotProfileImage from "../assets/robot_tag-modified.png";
 import UserProfileImage from "../assets/user.png";
 import "./ChatMessage.css";
 
@@ -50,7 +50,7 @@ export function ChatMessage({ message, sender, time }) {
         {sender === "robot" && (
           <img
             src={RobotProfileImage}
-            className="chat-message-profile"
+            className="chat-message-profile robot"
             alt="Robot"
           />
         )}
@@ -101,14 +101,14 @@ export function ChatMessage({ message, sender, time }) {
         {sender === "robot" && (
           <img
             src={RobotProfileImage}
-            className="chat-message-profile"
+            className="chat-message-profile robot"
             alt="Robot"
           />
         )}
         <div className="chat-message-text">
           {t(translationKey, {
             ...variables,
-            month: t(variables.month),
+            ...(variables?.month ? { month: t(variables.month) } : {}),
           })}
           {time && (
             <div className="chat-message-time">
@@ -138,7 +138,7 @@ export function ChatMessage({ message, sender, time }) {
       {sender === "robot" && (
         <img
           src={RobotProfileImage}
-          className="chat-message-profile"
+          className="chat-message-profile robot"
           alt="Robot"
         />
       )}

@@ -25,10 +25,21 @@
   flex-direction: column;
 }
 
+.chat-message-text:has(iframe){
+  max-width: 360px;
+}
+
+/* .chat-message-profile.robot{
+  width: 45px;
+  border-radius: 50%;
+} */
+
 .chat-message-profile{
   width: 45px;
   border-radius: 50%;
 }
+
+
 
 .chat-message-time {
   font-size: 14px;
