@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react'
-import { CORE_CONCEPTS } from "./data.js";
+import { useState, useEffect, useRef } from 'react'
+import { CORE_CONCEPTS, EXAMPLES } from "./data.js";
 import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx';
 import  Header  from "./components/Header/Header.jsx";
 import TabButton from './components/TabButton/TabButton.jsx';
+import TabContent from './components/TabContent/TabContent.jsx';
 import "./App.css";
 
 function App() {
-  const [tabContent, setTabContent] = useState("Por favor, pulse un botón del menú");
+  const [selectedTopic, setTabContent] = useState("default");
+  const contentRef = useRef(null)
   
   useEffect(() => {
     window.scrollTo({
@@ -15,12 +17,14 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    if (selectedTopic && contentRef.current) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [selectedTopic]);
+
   function handleClickMenu(selectedButton) {
     setTabContent(selectedButton)
-  }
-
-  function TabContent({ selectedTab }) {
-    return <div>{selectedTab}</div>;
   }
   
   return (
@@ -40,12 +44,21 @@ function App() {
       <section id='reactExamples'>
         <h2>Ejemplos React</h2>
         <menu>
-          <TabButton onClick={() => handleClickMenu("Componentes")}>Componentes</TabButton>
-          <TabButton onClick={() => handleClickMenu("JSX")}>JSX</TabButton>
-          <TabButton onClick={() => handleClickMenu("Props")}>Props</TabButton>
-          <TabButton onClick={() => handleClickMenu("Estados")}>Estados</TabButton>
+          <TabButton onClick={() => handleClickMenu("components")}>Componentes</TabButton>
+          <TabButton onClick={() => handleClickMenu("jsx")}>JSX</TabButton>
+          <TabButton onClick={() => handleClickMenu("props")}>Props</TabButton>
+          <TabButton onClick={() => handleClickMenu("state")}>Estados</TabButton>
         </menu>
-        <TabContent selectedTab={tabContent} />
+          <TabContent selectedTopic={selectedTopic}/>
+        {/* <div id='tab-content' className={selectedTopic==='default' ? 'centered' : 'left'} ref={contentRef}>
+          <h3>{EXAMPLES[selectedTopic].title}</h3>
+          <p>{EXAMPLES[selectedTopic].description}</p>
+          <pre>
+            <code>
+            {EXAMPLES[selectedTopic].code}
+            </code>
+          </pre>
+        </div> */}
       </section>
 
       {/* <main>
