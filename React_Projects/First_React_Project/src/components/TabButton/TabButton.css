@@ -28,7 +28,7 @@
 }
 
 #reactExamples menu button:hover {
-  background: linear-gradient(40deg, #576a6f, #a8dfed, #576a6f, #a8dfed);
+  background: linear-gradient(40deg, #576a6f, #a8dfed, #c6cbcc, #a8dfed);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -37,10 +37,11 @@
 }
 
 #reactExamples menu button.active {
-  background: linear-gradient(40deg, #576a6f, #a8dfed, #576a6f, #a8dfed);
+  background: linear-gradient(40deg, #576a6f, #a8dfed, #c6cbcc, #a8dfed);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.3rem;
   font-weight: bold;
+  border: 2px solid lightblue;
 }

@@ -7,7 +7,7 @@ import TabContent from './components/TabContent/TabContent.jsx';
 import "./App.css";
 
 function App() {
-  const [selectedTopic, setTabContent] = useState("default");
+  const [selectedTopic, setSelectedTopic] = useState("default");
   const contentRef = useRef(null)
   
   useEffect(() => {
@@ -24,7 +24,7 @@ function App() {
   }, [selectedTopic]);
 
   function handleClickMenu(selectedButton) {
-    setTabContent(selectedButton)
+    setSelectedTopic(selectedButton)
   }
   
   return (
@@ -44,21 +44,12 @@ function App() {
       <section id='reactExamples'>
         <h2>Ejemplos React</h2>
         <menu>
-          <TabButton onClick={() => handleClickMenu("components")}>Componentes</TabButton>
-          <TabButton onClick={() => handleClickMenu("jsx")}>JSX</TabButton>
-          <TabButton onClick={() => handleClickMenu("props")}>Props</TabButton>
-          <TabButton onClick={() => handleClickMenu("state")}>Estados</TabButton>
+          <TabButton isSelected={selectedTopic === 'components'} onClick={() => handleClickMenu("components")}>Componentes</TabButton>
+          <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => handleClickMenu("jsx")}>JSX</TabButton>
+          <TabButton isSelected={selectedTopic === 'props'} onClick={() => handleClickMenu("props")}>Props</TabButton>
+          <TabButton isSelected={selectedTopic === 'state'} onClick={() => handleClickMenu("state")}>Estados</TabButton>
         </menu>
           <TabContent selectedTopic={selectedTopic}/>
-        {/* <div id='tab-content' className={selectedTopic==='default' ? 'centered' : 'left'} ref={contentRef}>
-          <h3>{EXAMPLES[selectedTopic].title}</h3>
-          <p>{EXAMPLES[selectedTopic].description}</p>
-          <pre>
-            <code>
-            {EXAMPLES[selectedTopic].code}
-            </code>
-          </pre>
-        </div> */}
       </section>
 
       {/* <main>
